@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.unsplash.unsplash.R;
-import com.unsplash.unsplash.models.PhotoResponseObject;
+import com.unsplash.unsplash.models.PhotoResponseObj;
 
 import java.util.List;
 
@@ -18,11 +18,11 @@ import java.util.List;
  */
 public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapter.ViewHolder> {
 
-    private List<PhotoResponseObject> mPhotoResponseObjects;
+    private List<PhotoResponseObj> mPhotoResponseObjs;
     private Context mcContext;
 
-    public SearchResultAdapter(Context context,List<PhotoResponseObject> mPhotoResponseObjects) {
-        this.mPhotoResponseObjects = mPhotoResponseObjects;
+    public SearchResultAdapter(Context context,List<PhotoResponseObj> mPhotoResponseObjs) {
+        this.mPhotoResponseObjs = mPhotoResponseObjs;
         this.mcContext = context;
     }
 
@@ -38,7 +38,7 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
     public void onBindViewHolder(ViewHolder itemViewHolder, int position) {
         Glide
                 .with(mcContext)
-                .load(mPhotoResponseObjects.get(position).getPhoto().getSmallImage())
+                .load(mPhotoResponseObjs.get(position).getPhoto().getSmallImage())
                 .centerCrop()
                 .crossFade()
                 .into(itemViewHolder.photoImageView);
@@ -48,7 +48,7 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
     @Override
     public int getItemCount() {
 
-        return mPhotoResponseObjects.size();
+        return mPhotoResponseObjs.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

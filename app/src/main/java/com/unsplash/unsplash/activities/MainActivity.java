@@ -6,13 +6,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.unsplash.unsplash.adapters.SearchResultAdapterWithBinding;
 import com.unsplash.unsplash.components.DaggerSearchResultScreenComponent;
 import com.unsplash.unsplash.R;
 import com.unsplash.unsplash.adapters.SearchResultAdapter;
 import com.unsplash.unsplash.presenters.SearchResultContract;
 import com.unsplash.unsplash.presenters.SearchResultPresenter;
 import com.unsplash.unsplash.modules.SearchResultScreenModule;
-import com.unsplash.unsplash.models.PhotoResponseObject;
+import com.unsplash.unsplash.models.PhotoResponseObj;
 
 import java.util.List;
 
@@ -43,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements SearchResultContr
     }
 
     @Override
-    public void showUpdatedResults(List<PhotoResponseObject> photoResponseObjects) {
-        searchResultRecyclerView.setAdapter(new SearchResultAdapter(MainActivity.this,photoResponseObjects));
+    public void showUpdatedResults(List<PhotoResponseObj> photoResponseObjs) {
+        searchResultRecyclerView.setAdapter(new SearchResultAdapterWithBinding(photoResponseObjs));
     }
 
     @Override

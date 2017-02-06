@@ -15,7 +15,7 @@ public class SearchResultScreenModule {
     }
 
     @Provides
-    @CustomScope
+
     SearchResultContract.View provideSearchResultContractView(){
         return mView;
     }

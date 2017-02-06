@@ -1,6 +1,6 @@
 package com.unsplash.unsplash.presenters;
 
-import com.unsplash.unsplash.models.PhotoResponseObject;
+import com.unsplash.unsplash.models.PhotoResponseObj;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public interface SearchResultContract {
 
 
     interface View{
-        void showUpdatedResults(List<PhotoResponseObject> photoResponseObjects);
+        void showUpdatedResults(List<PhotoResponseObj> photoResponseObjs);
         void hideProgressBar();
     }
 
